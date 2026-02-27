@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineSearch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+<header>
+  <h1 class="logo">MídiaFilmes</h1>
+ 
+  <form id="searchForm">
+    <input type="text" id="searchInput" placeholder="Buscar filmes..." required>
+   
+    <select id="typeFilter">
+      <option value="">Todos</option>
+      <option value="movie">Filme</option>
+      <option value="series">Série</option>
+    </select>
+ 
+    <button type="submit">Buscar</button>
+  </form>
+</header>
+ 
+<main>
+ 
+  <section class="banner">
+    <div class="banner-content">
+      <h2>Filmes Ilimitados</h2>
+      <p>Descubra os melhores filmes agora</p>
+    </div>
+  </section>
+ 
+  <section>
+    <h2 class="section-title">Histórico</h2>
+    <ul id="historyList"></ul>
+  </section>
+ 
+  <section>
+    <h2 class="section-title">Resultados</h2>
+    <div id="movies" class="movies-row"></div>
+ 
+    <div class="pagination">
+      <button id="prevBtn">Anterior</button>
+      <button id="nextBtn">Próximo</button>
+    </div>
+  </section>
+ 
+</main>
+ 
+<div id="modal" class="modal">
+  <div class="modal-overlay"></div>
+  <div class="modal-content">
+    <button id="closeModal">X</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+ 
+<footer>
+  <p>© 2026 Filmes</p>
+</footer>
+ 
+<script src="script.js"></script>
+</body>
+</html>

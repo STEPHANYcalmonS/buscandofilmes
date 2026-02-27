@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+ 
+body {
+  background: linear-gradient(to bottom, #000000, #1b0036);
+  color: white;
+  padding-top: 80px;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 20px;
+  background: #08000f;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
+ 
+header .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+ 
+form {
+  display: flex;
+  gap: 10px;
+}
+ 
+input, select, button {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+}
+ 
+input::placeholder {
+  color: #ccc;
+}
+ 
+button {
+  background: linear-gradient(135deg, #7b2cbf, #9d4edd);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+ 
+button:hover {
+  background: linear-gradient(135deg, #9d4edd, #7b2cbf);
+}
+ 
+ 
+.banner {
+  height: 50vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 20px;
+  background: transparent,
+ url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4') center/cover no-repeat;
+  margin-bottom: 20px;
+}
+ 
+.banner-content h2 {
+  font-size: 2.8rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+ 
+.banner-content p {
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+.movies-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 20px;
+  justify-content: center;
+}
+ 
+.movie-card {
+  width: 150px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #2b0e4a;
+}
+ 
+.movie-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(157, 78, 221, 0.6);
+}
+ 
+.movie-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+ 
+.movie-card figcaption {
+  text-align: center;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+}
+ 
+.error {
+  background: #3a0000;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+ 
+.skeleton {
+  width: 150px;
+  height: 220px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #333, #444, #333);
+  background-size: 200%;
+  animation: loading 1.5s infinite;
+}
+ 
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+ 
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}
+ 
+.modal.active {
+  display: flex;
+}
+ 
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+}
+ 
+.modal-content {
+  position: relative;
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 400px;
+  z-index: 2;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+ 
+.modal.active .modal-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+ 
+#closeModal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #7b2cbf;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+ 
+#closeModal:hover {
+  background: #9d4edd;
+}
+ 
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 30px;
+}
+ 
+.pagination button {
+  background: #7b2cbf;
+  color: white;
+  padding: 8px 16px;
+  margin: 0 5px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+ 
+.pagination button:hover {
+  background: #9d4edd;
+}
+ 
+@media (min-width: 480px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 40px;
+  }
+}
+ 
+@media (min-width: 900px) {
+  .movie-card {
+    width: 200px;
+  }
+ 
+  .banner-content h2 {
+    font-size: 3.5rem;
+  }
+ 
+  .banner-content p {
+    font-size: 1.5rem;
+  }
+}
